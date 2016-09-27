@@ -1,0 +1,27 @@
+Team 09
+
+Alexander Oliver
+Nate Ewan
+Troy Kayne
+Zach Schmidt
+
+Description: 
+    As a team we plan to make a productivity management tool.
+
+Vision Statement:
+    Allow all people to effortlessly manage any task effectively.
+    
+Motivation:
+    We are all students with busy schedules and life events on
+    the side. We hope to help people keep track of all the 
+    challenges they are facing moment by moment, day by day,
+    year to year. Effortlessly keeping track of progess and goals.
+    
+Risks:
+
+Risk Mitigation Plan:
+    
+Software Development Methodology:
+    We intend to use the Agile methodology in order to quickly
+    adapt to adjustments in the project requirements that wll
+    inevitably arise as new challenges present themselves.
