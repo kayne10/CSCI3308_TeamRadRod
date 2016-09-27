@@ -23,5 +23,5 @@ Risk Mitigation Plan:
     
 Software Development Methodology:
     We intend to use the Agile methodology in order to quickly
-    adapt to adjustments in the project requirements that wll
+    adapt to adjustments in the project requirements that will
     inevitably arise as new challenges present themselves.
