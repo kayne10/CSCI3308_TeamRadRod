@@ -23,9 +23,10 @@
 
 <h2>Risks:</h2>
 <ul>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li>Dependencies like google calendar, wunderlist, etc.</li>
+	<li>Each team member carrying responsibilities creates a certain amount of risk of not completing it... deadlines and the failure to meet them</li>
+	<li>Whatever the choice of infrastructure is, the learning curve could be too steep</li>
+	<li>There are a lot of Productivity management apps out there. It's going to be hard to make it more unique.</li>
 </ul>
 
 <h2>Risk Mitigation Plan</h2>
