@@ -1,0 +1,40 @@
+m 09
+
+Alexander Oliver
+Nate Ewan
+Troy Kayne
+Zach Schmidt
+
+Description:
+    As a team we plan to make a productivity management tool.
+
+Vision Statement:
+    To help students become more productive in their studies.
+
+Motivation:
+    We are all students with busy schedules and life events on
+    the side. We hope to help people keep track of all the
+    challenges they are facing moment by moment, day by day,
+    year to year. Effortlessly keeping track of progess and goals.
+
+Risks:
+    We may encounter risks when learning to work with different
+    dependencies when creating our project, such as integrating
+    google calendar support, or working with the Wunderlist API.
+    We may also face challenges when learning to work with new
+    tools, such as Jango and MongoDB. Learning these tools will
+    take time, and they may have a steep learning curve.
+
+Risk Mitigation Plan:
+    To help mitigate risks, we plan on choosing tools that members
+    of our group are familiar with, this will allow for sharing of
+    information amongst all of our group. It will make the learning
+    curve less severe. We will have backup plans incase it becomes 
+    too difficult or takes too long to integrate different products
+    into our project.
+
+Software Development Methodology:
+    We intend to use the Agile methodology in order to quickly
+    adapt to adjustments in the project requirements that will
+    inevitably arise as new challenges present themselves.
+
