@@ -1,0 +1,29 @@
+Buff Productivity Management Tool:
+	Contacts App: Collects professor/TA/classmate info, searchable and easy to access
+		Inputs office hour times into google calendar
+	
+	Study session tool: makes it easier to create study sessions/meet ups for classes
+		makes it easier to find times that work for everybody		
+
+	Collects info on assignments that are due, labs, anything thats dues and makes a
+		calendar event for whens its due
+
+One goal for the project is to make inputting to google calendar an easier task
+
+
+User requirements:
+	Accessing calendar from our tool, create events
+	Automatically create events for due dates (for assignments,labs, exams)
+	Accessing class info (accessing contact info for TA's, Professor, ect...)
+	Adding any course info to your calendar for a class(exam and homework due dates)
+	Setting up meetups and study sessions, make that easier
+
+Functional Requirements:
+	Creating a user, and getting all user info and storing in a database
+	What does our database look like? Setting up tables  
+	What user info do we need to store? username, password, email, ect...
+	What does our website look like? plan out how our site's going to look 
+	
+
+Non-functional Requirements:
+		
