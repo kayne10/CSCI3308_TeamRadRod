@@ -18,4 +18,14 @@ class MeetUp(models.Model):
     location = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.title + ' - ' + self.assignment + ' - ' + self.course
+        return self.title
+
+class Comment(models.Model):
+    meetup = models.ForeignKey(MeetUp, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    comment_content = models.CharField(max_length=50)
+    is_attending = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.comment_content

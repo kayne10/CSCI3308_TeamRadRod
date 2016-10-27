@@ -13,4 +13,4 @@ class Assignment(models.Model):
     is_complete = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.title + ' - ' + self.course
+        return self.title
