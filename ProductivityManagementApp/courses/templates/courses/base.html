@@ -1,0 +1,19 @@
+<!-- Include static files -->
+<!-- Include links and scripts -->
+
+<body>
+  <!-- Vertical Nav with Apps -->
+  <!-- If user is logged in -->
+  <nav>
+    <ul>
+      <li><a href="{% url 'courses:index' %}">Courses</a></li>
+      <li><a href="{% url 'assignments:index' %}">Assignments</a></li>
+      <li><a href="{% url 'meetups:index' %}">Meetups</a></li>
+    </ul>
+  </nav>
+
+{% block body %}
+{% endblock %}
+
+<!-- More Scripts -->
+</body>

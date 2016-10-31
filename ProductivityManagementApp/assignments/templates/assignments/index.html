@@ -1,0 +1,16 @@
+{% extends 'courses/base.html' %}
+
+
+{% block body %}
+<h1>Assignments</h1>
+{% if assignments %}
+  {% for assignment in assignments %}
+    <ul>
+      <li>{{ assignment.title }}</li>
+    </ul>
+  {% endfor %}
+{% else %}
+  <h3>You have no assignments</h3>
+{% endif %}
+
+{% endblock %}

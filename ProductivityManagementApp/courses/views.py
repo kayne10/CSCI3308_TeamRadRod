@@ -19,3 +19,14 @@ def index(request):
     'meetups':meetups,
     }
     return render(request, 'courses/index.html', context)
+
+def home(request):
+    courses = Course.objects.all()
+    assignments = Assignment.objects.all()
+    meetups = MeetUp.objects.all()
+    context = {
+    'courses':courses,
+    'assignments':assignments,
+    'meetups':meetups,
+    }
+    return render(request, 'courses/home.html', context)

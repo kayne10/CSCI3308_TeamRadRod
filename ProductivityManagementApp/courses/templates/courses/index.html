@@ -1,4 +1,6 @@
+{% extends 'courses/base.html' %}
 
+{% block body %}
 
 <!-- Display courses -->
 <h1>Courses</h1>
@@ -12,29 +14,4 @@
   <h1>You have no courses</h1>
 {% endif %}
 
-<h1>Assignments</h1>
-{% if assignments %}
-  {% for assignment in assignments %}
-    <ul>
-      <li><a href="#">{{ assignment.title }}</a></li>
-    </ul>
-  {% endfor %}
-{% else %}
-  <h1>You have no assignments</h1>
-{% endif %}
-
-<h1>Meetups</h1>
-{% if meetups %}
-  {% for meetup in meetups %}
-    <ul>
-      <li><a href="#">{{ meetup.title }}</a></li>
-      {% for comment in meetup.comment_set.all %}
-      <ul>
-        <li>{{ comment.comment_content }}</li>
-      </ul>
-      {% endfor %}
-    </ul>
-  {% endfor %}
-{% else %}
-  <h1>You have no meet ups</h1>
-{% endif %}
+{% endblock %}
