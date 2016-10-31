@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'ProductivityManagementApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'TeamRadRod',
         'USER': 'root',
         'PASSWORD': 'buzchop1',
