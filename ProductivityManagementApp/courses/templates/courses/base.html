@@ -4,8 +4,10 @@
 <body>
   <!-- Vertical Nav with Apps -->
   <!-- If user is logged in -->
+  <!-- nav is a mess -->
   <nav>
     <ul>
+      <li><a href="{% url 'home:index' %}">Home</a></li>
       <li><a href="{% url 'courses:index' %}">Courses</a></li>
       <li><a href="{% url 'assignments:index' %}">Assignments</a></li>
       <li><a href="{% url 'meetups:index' %}">Meetups</a></li>

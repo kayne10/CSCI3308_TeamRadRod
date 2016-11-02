@@ -3,7 +3,7 @@ from django.core.mail import EmailMessage
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect, render
 from django.template.loader import get_template
-from .models import Course
+from courses.models import Course
 from assignments.models import Assignment
 from meetups.models import MeetUp, Comment
 
@@ -18,4 +18,4 @@ def index(request):
     'assignments':assignments,
     'meetups':meetups,
     }
-    return render(request, 'courses/index.html', context)
+    return render(request, 'home/index.html', context)
