@@ -1,0 +1,38 @@
+Target Market:
+	People who suck at getting to office hours, cu computer science students
+	Makes meetups with people from the course easier
+	
+Ideas:
+	Fill out schedule, acquire a list of assignments, 
+	help you meet up people who are doing the same assigment
+	Facilitators: Instructors, Rock start students, over achievers
+	Live feedback from students who have completed the assignments
+	Recomend places for the meetup to take place
+	
+Profile of Competitors:
+	Meetup.com
+	Other organization apps
+	Study buddy apps
+	
+Competative advantage:
+	Collalecing meetups to a given place
+	Free
+	Built for cu boulder computer science students
+	Meetups are assignment based (more focused)
+	Look up statistics on meetup apps
+	
+Infographic Ideas:
+	
+	Thigns we need:
+		App Name, color scheme, 
+		
+	Circular Clock design, different meet ups scheduled on the clock
+	
+	Show a full calendar,
+		"How do you get to office hours?"
+		Statistics about grades from group work
+		stats on how people use their time
+		Statistics on procrastination
+		CU Office hours
+	
+	
