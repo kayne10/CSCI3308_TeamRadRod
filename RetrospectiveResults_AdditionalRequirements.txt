@@ -1,0 +1,27 @@
+﻿Retrospective results -
+
+
+The primary result of our first Sprint is that we overestimated what we could accomplish with our team size. Learning a framework like Django takes time and understanding how it will be managed and incrementally improved with a team. Struggles with database setup and sharing combined with the complexity of a scalable format like Django will keep us busy through the rest of the semester. In our next Sprint we will break down each item in the Sprint backlog into much smaller chunks more directly related to each milestone with a big picture of the final product and features in mind. 
+
+
+Going forward we are emphasizing more frequent and formal in person meetings, scheduled for a minimum of 2 hours a week. Additionally, we are going to try to employ the Agile poker technique to more accurately gauge the challenge of individual tasks. Trimming down our features to a core list required to achieve basic purposes of the application will help us to deploy a product capable of being built upon. 
+
+
+
+
+
+
+Additional requirements -
+
+
+We have refined our hard requirements until we have a front facing page and an idea of how to accomplish a few of the more advanced features for the site. 
+
+
+New requirements:
+* Display assignments, broken down by course.
+* Display sample meetups with associated assignments.
+
+
+Secondary requirements:
+* Group assignments into courses
+* Be able to sign in to the site, join a course and look for relevant meetups.
