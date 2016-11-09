@@ -16,16 +16,11 @@
 <!-- Header -->
 <div class="header-container">
   <h1>Welcome to Group Up!</h1>
-  <!-- Navbar with Apps -->
-    <nav>
-      <ul>
-        <!-- Keep home index? -->
-        <li><a href="{% url 'home:index' %}">Home</a></li>
-        <li><a href="{% url 'courses:index' %}">Courses</a></li>
-        <li><a href="{% url 'assignments:index' %}">Assignments</a></li>
-        <li><a href="{% url 'meetups:index' %}">Meetups</a></li>
-      </ul>
-    </nav>
+  <div class="panel-footer">
+      Don't have an account? <a href="{% url 'home:register' %}">Click here</a> to register.
+  </div>
+  <!-- Button that scrolls to bottom of page to login -->
+
 
 </div>
 

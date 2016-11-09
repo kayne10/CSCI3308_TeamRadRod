@@ -1,14 +1,21 @@
 {% extends 'courses/base.html' %}
+{% block title %}MakeTime - Meet Up{% endblock %}
+{% block meetup_active %}active{% endblock %}
 
 {% block body %}
 <h1>Meetups</h1>
 {% if meetups %}
   {% for meetup in meetups %}
-    <div class="container">
+    <div class="meetup-container">
       <h3>{{ meetup.title }}  Posted by {{ meetup.user }}</h3>
       {% for comment in meetup.comment_set.all %}
-      <div class="comment">
-        <h6>{{ comment.comment_content }} Posted by {{ comment.user }}</h6>
+      <div class="comment-container">
+        <div class="comment-content">
+          <h6>{{ comment.comment_content }} Posted by {{ comment.user }} at {{ comment.created_at }}</h6>
+        </div>
+        <div class="is-attending-container">
+          <!-- {{ comment.is_attending  }} -->
+        </div>
       </div>
       {% endfor %}
     </div>

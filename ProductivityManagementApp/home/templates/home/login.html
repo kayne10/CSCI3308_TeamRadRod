@@ -1,6 +1,15 @@
-{% block body %}
-<div class="container-fluid">
+{% extends 'courses/base_login.html' %}
+{% block title %}Group Up! - Welcome and Login{% endblock %}
 
+{% block body %}
+<!-- Welcoming Section with Information about App -->
+
+
+
+
+
+<!-- Login in and Register -->
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <div class="panel panel-default">
@@ -32,11 +41,12 @@
                                 <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </div>
+                        <div class="panel-footer">
+                            Don't have an account? <a href="{% url 'home:register' %}">Click here</a> to register.
+                        </div>
                     </form>
                 </div>
-                <div class="panel-footer">
-                    Don't have an account? <a href="{% url 'home:register' %}">Click here</a> to register.
-                </div>
+
             </div>
         </div>
       </div>
