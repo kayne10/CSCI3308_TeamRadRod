@@ -6,6 +6,7 @@ from courses.models import Course
 
 # Create your models here.
 class Assignment(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
