@@ -18,5 +18,4 @@ def index(request):
     'assignments':assignments,
     'meetups':meetups,
     }
-    return render(request, 'home/index.html', context)
-    
+    return render(request, 'assignments/index.html', context)
