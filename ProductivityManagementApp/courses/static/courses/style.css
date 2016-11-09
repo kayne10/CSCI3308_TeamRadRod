@@ -74,5 +74,10 @@ nav ul li a {
   text-decoration: none;
 }
 
-
+.logout-button {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  float: right;
+  
+}
 /* Meetup section */
