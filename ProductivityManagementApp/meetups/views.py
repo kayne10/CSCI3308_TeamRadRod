@@ -12,7 +12,7 @@ from courses.models import Course
 def index(request):
     courses = Course.objects.filter(user=request.user)
     assignments = Assignment.objects.filter(user=request.user)
-    meetups = MeetUp.objects.filter(user=request.user)
+    meetups = MeetUp.objects.all()
     context = {
     'courses':courses,
     'assignments':assignments,

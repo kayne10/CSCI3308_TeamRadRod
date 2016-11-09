@@ -5,11 +5,17 @@
 <!-- Display courses -->
 <h1>Courses</h1>
 {% if courses %}
-  <ul>
+
     {% for course in courses %}
-      <li>{{ course.title }}</li>
+      <div class="container">
+        <h3>{{ course.title }}</h3>
+        <p>
+          {{ course.description }}
+        </p>
+        <h4><strong>{{ course.location }}</strong></h4>
+      </div>
     {% endfor %}
-  </ul>
+
 {% else %}
   <h3>You have no courses</h3>
 {% endif %}

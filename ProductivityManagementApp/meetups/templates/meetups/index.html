@@ -4,14 +4,14 @@
 <h1>Meetups</h1>
 {% if meetups %}
   {% for meetup in meetups %}
-    <ul>
-      <li><a href="#">{{ meetup.title }}</a></li>
+    <div class="container">
+      <h3>{{ meetup.title }}  Posted by {{ meetup.user }}</h3>
       {% for comment in meetup.comment_set.all %}
-      <ul>
-        <li>{{ comment.comment_content }}</li>
-      </ul>
+      <div class="comment">
+        <h6>{{ comment.comment_content }} Posted by {{ comment.user }}</h6>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
   {% endfor %}
 {% else %}
   <h1>You have no meet ups</h1>
