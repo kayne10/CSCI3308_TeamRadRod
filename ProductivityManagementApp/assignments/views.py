@@ -10,12 +10,13 @@ from meetups.models import MeetUp, Comment
 
 # Create your views here.
 def index(request):
-    courses = Course.objects.all()
-    assignments = Assignment.objects.all()
-    meetups = MeetUp.objects.all()
+    courses = Course.objects.filter(user=request.user)
+    assignments = Assignment.objects.filter(user=request.user)
+    meetups = MeetUp.objects.filter(user=request.user)
     context = {
     'courses':courses,
     'assignments':assignments,
     'meetups':meetups,
     }
-    return render(request, 'assignments/index.html', context)
+    return render(request, 'home/index.html', context)
+    
