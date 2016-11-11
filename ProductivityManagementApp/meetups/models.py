@@ -13,9 +13,10 @@ class MeetUp(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     # We want to invite users to this model. Or we can show that a user created a meetup and make it public??
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
-    start_time = models.DateTimeField(auto_now=False)
-    est_end_time = models.DateTimeField(auto_now=False)
+    start_time = models.CharField(max_length=25)
+    est_end_time = models.CharField(max_length=25)
     location = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

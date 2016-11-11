@@ -27,8 +27,8 @@ def create_course(request):
         course = form.save(commit=False)
         course.user = request.user
         course.save()
-        courses = Assignment.objects.filter(user=request.user)
-        return render(request, 'courses/index.html', {'courses': assignments})
+        courses = Course.objects.filter(user=request.user)
+        return render(request, 'courses/index.html', {'courses': courses})
     context = {
         "form": form,
         }

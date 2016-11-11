@@ -10,7 +10,7 @@ class Assignment(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=100)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    due_date = models.DateTimeField(auto_now=False)
+    due_date = models.CharField(max_length=25)
     is_complete = models.BooleanField(default=False)
 
     def __str__(self):

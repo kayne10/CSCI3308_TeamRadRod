@@ -19,8 +19,10 @@ def index(request):
         courses = Course.objects.filter(user=request.user)
         assignments = Assignment.objects.filter(user=request.user)
         meetups = MeetUp.objects.filter(user=request.user)
+        user = request.user
         context = {
         'courses':courses,
+        'user': user,
         'assignments':assignments,
         'meetups':meetups,
         }
