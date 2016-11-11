@@ -1,5 +1,5 @@
 {% extends 'courses/base.html' %}
-{% block title %}MakeTime - Assignments{% endblock %}
+{% block title %}Group Up - Assignments{% endblock %}
 {% block assignment_active %}active{% endblock %}
 
 
@@ -14,5 +14,7 @@
 {% else %}
   <h3>You have no assignments</h3>
 {% endif %}
+
+<a class="btn btn-success" href="{% url 'assignments:create_assignment' %}">Create Assignment</a>
 
 {% endblock %}

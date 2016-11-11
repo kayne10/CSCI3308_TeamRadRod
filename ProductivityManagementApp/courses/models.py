@@ -11,6 +11,7 @@ class Course(models.Model):
     location = models.CharField(max_length=30)
     start_day = models.DateTimeField(auto_now=False)
     end_day = models.DateTimeField(auto_now=False)
+    # time = models.DateTimeField(auto_now=False)
 
     def __str__(self):
 		return self.title
