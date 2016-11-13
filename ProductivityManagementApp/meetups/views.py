@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.core.urlresolvers import reverse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.template.loader import get_template
 from .models import MeetUp, Comment
 from assignments.models import Assignment
@@ -14,6 +14,14 @@ def index(request):
     courses = Course.objects.filter(user=request.user)
     assignments = Assignment.objects.filter(user=request.user)
     meetups = MeetUp.objects.all()
+    # form = CommentForm(request.POST, request.FILES)
+    # if form.is_valid():
+    #     comment = form.save(commit=false)
+    #     comment.user = request.user
+    #     comment.save()
+    #     comments = MeetUp.comment_set.all()
+    #     # context
+    #     # return
     context = {
     'courses':courses,
     'assignments':assignments,
@@ -34,3 +42,19 @@ def create_meetup(request):
         "form": form,
         }
     return render(request, 'meetups/create_meetup.html', context)
+
+def create_comment(request, forum_id):
+    form = CommentForm(request.POST or None, request.FILES or None)
+    meetup = get_object_or_404(Forum, pk=forum_id)
+    if form.is_valid():
+        meetup_comments = meetup.comment_set.all()
+        comment = form.save(commit=False)
+        comment.meetup = meetup
+        comment.user = request.user
+        comment.save()
+        return render(request, 'meetup/index.html', {'meetup': meetup})
+    context = {
+    'meetup': meetup,
+    'form': form,
+    }
+    return render(request, 'meetup/create_comment.html', context)
