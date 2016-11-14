@@ -14,14 +14,19 @@ def index(request):
     courses = Course.objects.filter(user=request.user)
     assignments = Assignment.objects.filter(user=request.user)
     meetups = MeetUp.objects.all()
-    # form = CommentForm(request.POST, request.FILES)
-    # if form.is_valid():
-    #     comment = form.save(commit=false)
-    #     comment.user = request.user
-    #     comment.save()
-    #     comments = MeetUp.comment_set.all()
-    #     # context
-    #     # return
+    form = CommentForm(request.POST, request.FILES)
+    if form.is_valid():
+        comment = form.save(commit=false)
+        comment.user = request.user
+        comment.save()
+        comments = MeetUp.comment_set.all()
+        context = {
+        'courses':courses,
+        'assignments':assignments,
+        'meetups':meetups,
+        'comments':comments
+        }
+        return redirect(request, 'meetups/index.html', context)
     context = {
     'courses':courses,
     'assignments':assignments,
