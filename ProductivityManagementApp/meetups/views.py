@@ -48,18 +48,21 @@ def create_meetup(request):
         }
     return render(request, 'meetups/create_meetup.html', context)
 
-def create_comment(request, forum_id):
+def create_comment(request, meetup_id):
     form = CommentForm(request.POST or None, request.FILES or None)
-    meetup = get_object_or_404(Forum, pk=forum_id)
+    meetup = get_object_or_404(MeetUp, pk=meetup_id)
     if form.is_valid():
         meetup_comments = meetup.comment_set.all()
+        meetup_id = meetup.id
         comment = form.save(commit=False)
         comment.meetup = meetup
         comment.user = request.user
         comment.save()
+        meetup.save()
         return render(request, 'meetup/index.html', {'meetup': meetup})
     context = {
     'meetup': meetup,
     'form': form,
+    'error_message':'There was an error'
     }
-    return render(request, 'meetup/create_comment.html', context)
+    return render(request, 'meetup/index.html', context)

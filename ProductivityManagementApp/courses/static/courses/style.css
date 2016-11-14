@@ -86,4 +86,14 @@ nav ul li a {
 	top:0;
 }
 
+/* Base Container */
+.main-container {
+	width: 80%;
+	margin: auto;
+}
+
 /* Meetup section */
+
+#id_comment_content {
+	width: 400px;
+}

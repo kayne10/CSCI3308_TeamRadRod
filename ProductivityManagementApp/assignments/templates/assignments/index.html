@@ -4,13 +4,29 @@
 
 
 {% block body %}
+
+
 <h1>Assignments</h1>
 {% if assignments %}
-  {% for assignment in assignments %}
-    <ul>
-      <li>{{ assignment.title }}</li>
-    </ul>
-  {% endfor %}
+<table class="table">
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Course</th>
+        <th>Due Date</th>
+        <th>Complete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for assignment in assignments %}
+        <tr>
+          <td>{{ assignment.title }}</td>
+          <td>{{ assignment.description }}</td>
+          <td>{{ assignment.course }}</td>
+          <td>{{ assignment.is_complete }}</td>
+        </tr>
+      {% endfor %}
 {% else %}
   <h3>You have no assignments</h3>
 {% endif %}
