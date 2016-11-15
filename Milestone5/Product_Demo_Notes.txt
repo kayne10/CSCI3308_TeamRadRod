@@ -1,0 +1,16 @@
+Problem:
+	Show the problem we're trying to solve (the office hour conundrum).
+	
+Solution:
+	Show how our product can easily solve that problem.
+	
+Step through how our product works:
+	Sign up
+	Pick classes
+	Creating a meetup
+	Signing up for a meetup
+	
+Maybe include a skit about why this is a better system
+
+Show some stats about office hour attendence
+
