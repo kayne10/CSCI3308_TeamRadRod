@@ -43,9 +43,7 @@ def create_meetup(request):
         meetup.save()
         meetups = MeetUp.objects.all()
         return render(request, 'meetups/index.html', {'meetups': meetups})
-    context = {
-        "form": form,
-        }
+    context = {"form": form}
     return render(request, 'meetups/create_meetup.html', context)
 
 def create_comment(request, meetup_id):
@@ -61,8 +59,8 @@ def create_comment(request, meetup_id):
         meetup.save()
         return render(request, 'meetup/index.html', {'meetup': meetup})
     context = {
-    'meetup': meetup,
-    'form': form,
-    'error_message':'There was an error'
+        'meetup': meetup,
+        'form': form,
+        'error_message':'There was an error'
     }
     return render(request, 'meetup/index.html', context)
