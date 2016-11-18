@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Include Links and Scripts -->
     <meta charset="UTF-8">
     <title>{% block title %}GroupUp{% endblock %}</title>
@@ -10,29 +10,25 @@
     <link rel="stylesheet" type="text/css" href="{% static 'courses/style.css' %}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
+  </head>
 
-<body>
-<!-- Header -->
-<div class="header-container">
-  <h1>Welcome to GroupUp!</h1>
-  <div class="panel-footer">
-      Don't have an account? <a href="{% url 'home:register' %}">Click here</a> to register.
-  </div>
+  <body>
+    <!-- Header -->
+    <div class="header-container">
+      <h1>Welcome to GroupUp!</h1>
+      <div class="panel-footer">
+        Don't have an account? <a href="{% url 'home:register' %}">Click here</a> to register.
+      </div>
+      <img class="favicon" src="{% static 'courses/img/favicon.svg' %}" alt="" height="300px" width="300px" />
+      <!-- Button that scrolls to bottom of page to login -->
+    </div>
 
-  <img class="favicon" src="{% static 'courses/img/favicon.svg' %}" alt="" height="300px" width="300px" />
+    {% block body %}
+    {% endblock %}
 
-  <!-- Button that scrolls to bottom of page to login -->
+    <!-- More Scripts -->
 
+    <!-- Footer -->
 
-</div>
-
-{% block body %}
-{% endblock %}
-
-
-<!-- More Scripts -->
-
-<!-- Footer -->
-
-</body>
+  </body>
+</html>

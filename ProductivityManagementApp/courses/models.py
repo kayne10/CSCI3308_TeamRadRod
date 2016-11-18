@@ -14,4 +14,4 @@ class Course(models.Model):
     time = models.DateTimeField(auto_now=False)
 
     def __str__(self):
-		return self.title
+        return self.title

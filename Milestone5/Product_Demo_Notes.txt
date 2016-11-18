@@ -1,0 +1,37 @@
+Problem:
+	Show the problem we're trying to solve (the office hour conundrum).
+	
+Solution:
+	Show how our product can easily solve that problem.
+	
+Step through how our product works:
+	Sign up
+	Pick classes
+	Creating a meetup
+	Signing up for a meetup
+	
+Maybe include a skit about why this is a better system
+
+Show some stats about office hour attendence
+
+Hi, I'm Nate from Group Up
+
+We all live very busy lives. College students try to balance their health, work, and class.
+Often times, this doesn't leave much time for office hours.
+
+Taking a survery amongst our team, we've found that up to 85% of the time, office hours
+conflict with other responsibilities, such as work. These time constraints make attending office hours
+or collaborating with other students incredibly difficult.
+
+Here at GroupUp, our goal is to make sure you can use those resources.
+We want to make office hours easier to attend, and make meeting up with other
+students a much quicker, and easier process. 
+
+We want to students the power to collaborate and communicate in such a way
+that's beneficial to not only the students, but to the instructors too.
+
+This product has been created by CU students, for CU Students.
+
+-incentive driven, Potentially reward CA's, LA's, TA's, or other students who want to help out.
+-Work load is distributed to streamline creation process.
+

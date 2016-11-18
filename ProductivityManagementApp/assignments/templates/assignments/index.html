@@ -2,15 +2,13 @@
 {% block title %}Group Up - Assignments{% endblock %}
 {% block assignment_active %}active{% endblock %}
 
-
 {% block body %}
-
 
 <h1>Assignments</h1>
 {% if assignments %}
-<table class="table">
-  <thead>
-    <tr>
+  <table class="table">
+    <thead>
+      <tr>
         <th>Title</th>
         <th>Description</th>
         <th>Course</th>
@@ -28,6 +26,8 @@
           <td>{{ assignment.is_complete }}</td>
         </tr>
       {% endfor %}
+    </tbody>
+  </table>
 {% else %}
   <h3>You have no assignments</h3>
 {% endif %}

@@ -7,17 +7,15 @@
 <!-- Display User Courses courses -->
 <h1>{{ user }}'s  Courses</h1>
 {% if courses %}
-
-    {% for course in courses %}
-      <div class="container">
-        <h3>{{ course.title }}</h3>
-        <p>
-          {{ course.description }}
-        </p>
-        <h4><strong>{{ course.location }}</strong></h4>
-      </div>
-    {% endfor %}
-
+  {% for course in courses %}
+    <div class="container">
+      <h3>{{ course.title }}</h3>
+      <p>
+        {{ course.description }}
+      </p>
+      <h4><strong>{{ course.location }}</strong></h4>
+    </div>
+  {% endfor %}
 {% else %}
   <h3>You have no courses</h3>
 {% endif %}
