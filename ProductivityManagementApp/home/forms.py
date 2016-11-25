@@ -16,7 +16,7 @@ class CourseForm(forms.ModelForm):
 
     class Meta:
         model = Course
-        fields = ['title', 'description', 'location', 'start_day', 'end_day']
+        fields = ['title', 'description', 'location', 'start_day', 'end_day', 'time']
 
 
 class MeetUpForm(forms.ModelForm):

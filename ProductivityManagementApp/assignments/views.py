@@ -28,10 +28,7 @@ def create_assignment(request):
         assignment.user = request.user
         assignment.save()
         assignments = Assignment.objects.filter(user=request.user)
-        context = {
-        'assignments': assignemnts
-        }
-        return render(request, 'assignments/index.html', context)
+        return render(request, 'assignments/index.html', {'assignments':assignments})
     context = {
         "form": form,
         }
