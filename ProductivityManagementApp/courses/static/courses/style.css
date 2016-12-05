@@ -95,6 +95,17 @@ nav ul li a {
   margin: auto;
 }
 
+/* top container */
+.top-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-success {
+  height: 3em;
+  margin-top: 1em;
+}
+
 /* Meetup section */
 
 #id_comment_content {
@@ -107,4 +118,12 @@ nav ul li a {
   border-right: none;
   border-left: none;
   border-bottom: none;
+}
+
+.form-horizontal {
+  display: flex;
+}
+
+.btn-default {
+  margin-left: 1em;
 }

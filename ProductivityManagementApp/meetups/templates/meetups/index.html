@@ -3,8 +3,11 @@
 {% block meetup_active %}active{% endblock %}
 
 {% block body %}
+<div class="top-container">
+  <h1>Meetups</h1>
+  <a class="btn btn-success" href="{% url 'meetups:create_meetup' %}">Create Meet Up</a>
+</div>
 
-<h1>Meetups</h1>
 {% if meetups %}
   {% for meetup in meetups %}
     <div class="meetup-container">
@@ -33,7 +36,4 @@
   <h1>You have no meet ups</h1>
 {% endif %}
 
-<div class="create">
-  <a class="btn btn-success" href="{% url 'meetups:create_meetup' %}">Create Meet Up</a>
-</div>
 {% endblock %}
