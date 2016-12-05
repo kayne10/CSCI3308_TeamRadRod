@@ -12,7 +12,8 @@
   {% for meetup in meetups %}
     <div class="meetup-container">
       <a href="{% url 'meetups:detail' meetup.id %}"><h3>{{ meetup.title }}<h3></a>
-      <h3>Posted by {{ meetup.user }} at {{ meetup.created_at }}</h3>
+      <h3>Location: {{ meetup.location }} from {{ meetup.start_time }} to {{ meetup.est_end_time }}</h3>
+      <h4>Posted by {{ meetup.user }} at {{ meetup.created_at }}</h4>
       {% for comment in meetup.comment_set.all %}
       <div class="comment-container">
         <div class="comment-content">
@@ -22,7 +23,7 @@
       {% endfor %}
 
       <!-- comment link -->
-      <form class="form-horizontal" role="form" action="{% url 'meetups:create_comment' meetup.id %}" method="post" enctype="multipart/form-data" class="comment_form">
+      <form class="comment-form" role="form" action="{% url 'meetups:create_comment' meetup.id %}" method="post" enctype="multipart/form-data" class="comment_form">
         {% csrf_token %}
           <input type="hidden" name="meetup" value="{{ meetup }}">
           <input type="text" id="id_comment_content" maxlength="50" name="comment_content" placeholder="Let {{ meetup.user }} know if you can make it!" required>

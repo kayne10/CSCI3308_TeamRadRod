@@ -28,7 +28,7 @@
         </div>
         {% endfor %}
       </div>
-      <form class="form-horizontal" role="form" action="{% url 'meetups:create_comment' meetup.id %}" method="post" enctype="multipart/form-data">
+      <form class="comment-form" role="form" action="{% url 'meetups:create_comment' meetup.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
           <input type="hidden" name="meetup" value="{{ meetup }}">
           <input type="text" id="id_comment_content" maxlength="50" name="comment_content" placeholder="Let {{ meetup.user }} know if you can make it!" required>
