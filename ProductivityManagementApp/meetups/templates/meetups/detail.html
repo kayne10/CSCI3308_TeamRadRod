@@ -1,0 +1,43 @@
+{% extends 'courses/base.html' %}
+{% block title %}GroupUp - Meet Up{% endblock %}
+{% block meetup_active %}active{% endblock %}
+
+{% block body %}
+  <div class="container-fluid">
+
+    <!-- Meetup Panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>{{ meetup.title }}</h2>
+      </div>
+    </div>
+      <div class="panel-body">
+        <h3>Assignment: {{ meetup.assignment }}</h3>
+        <h3>Course: {{ meetup.course }}</h3>
+        <h4>Posted by {{ meetup.user }} at {{ meetup.created_at }}</h4>
+        <p>Time: {{ meetup.start_time }} - {{ meetup.est_end_time }}</p>
+        <h4>Location: {{ meetup.location }}</h4>
+
+        <!-- Display Comments -->
+        <h3>Comments</h3>
+        {% for comment in meetup.comment_set.all %}
+        <div class="comment-container">
+          <div class="comment-content">
+            <h6>{{ comment.comment_content }} Posted by {{ comment.user }} at {{ comment.created_at }}</h6>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <form class="form-horizontal" role="form" action="{% url 'meetups:create_comment' meetup.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <input type="hidden" name="meetup" value="{{ meetup }}">
+          <input type="text" id="id_comment_content" maxlength="50" name="comment_content" placeholder="Let {{ meetup.user }} know if you can make it!" required>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Comment</button>
+              </div>
+            </div>
+      </form>
+  </div>
+
+{% endblock %}

@@ -8,7 +8,8 @@
 {% if meetups %}
   {% for meetup in meetups %}
     <div class="meetup-container">
-      <h3>{{ meetup.title }}  Posted by {{ meetup.user }} at {{ meetup.created_at }}</h3>
+      <a href="{% url 'meetups:detail' meetup.id %}"><h3>{{ meetup.title }}<h3></a>
+      <h3>Posted by {{ meetup.user }} at {{ meetup.created_at }}</h3>
       {% for comment in meetup.comment_set.all %}
       <div class="comment-container">
         <div class="comment-content">
@@ -16,37 +17,23 @@
         </div>
       </div>
       {% endfor %}
+
+      <!-- comment link -->
+      <form class="form-horizontal" role="form" action="{% url 'meetups:create_comment' meetup.id %}" method="post" enctype="multipart/form-data" class="comment_form">
+        {% csrf_token %}
+          <input type="hidden" name="meetup" value="{{ meetup }}">
+          <input type="text" id="id_comment_content" maxlength="50" name="comment_content" placeholder="Let {{ meetup.user }} know if you can make it!" required>
+            <div class="form-group">
+                  <button type="submit" class="btn btn-default">Comment</button>
+            </div>
+      </form>
     </div>
-
-    <!-- comment input -->
-    <form class="form-horizontal" role="form" action="{% url 'meetups:create_comment'%}" method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      <div class="form-group">
-        <div class="col-sm-2">
-          <input id="id_comment_content" maxlength="50" name="comment_content" type="text" placeholder="Keep {{ meetup.user }} posted, comment here..." required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="id_comment_is_attending">
-          Are you attending?
-        </label>
-        <div class="col-sm-2">
-          <input id="id_is_attending" default="False" name="is_attending" type="checkbox" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-2">
-          <button type="submit" class="btn btn-success">Post</button>
-        </div>
-      </div>
-    </form>
   {% endfor %}
 {% else %}
   <h1>You have no meet ups</h1>
 {% endif %}
 
-<a class="btn btn-success" href="{% url 'meetups:create_meetup' %}">Create Meet Up</a>
-
+<div class="create">
+  <a class="btn btn-success" href="{% url 'meetups:create_meetup' %}">Create Meet Up</a>
+</div>
 {% endblock %}

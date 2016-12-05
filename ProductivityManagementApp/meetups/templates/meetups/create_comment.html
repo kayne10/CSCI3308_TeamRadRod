@@ -1,43 +1,45 @@
 {% extends 'courses/base.html' %}
-{% block title %}MakeTime - Meet Up{% endblock %}
+{% block title %}GroupUp - Meet Up{% endblock %}
 {% block meetup_active %}active{% endblock %}
 
 {% block body %}
+  <div class="container-fluid">
 
-<h1>Meetups</h1>
-{% if meetups %}
-  {% for meetup in meetups %}
-    <div class="meetup-container">
-      <h3>{{ meetup.title }}  Posted by {{ meetup.user }} at {{ meetup.created_at }}</h3>
+    <!-- Meetup Panel -->
+    <div class="panel panel-default">
+      <div class="panel-header">
+        <h2>{{ meetup.title }}</h2>
+      </div>
+    </div>
+    <div class="panel-body">
+      <h3>Assignment: {{ meetup.assignment }}</h3>
+      <h3>Course: {{ meetup.course }}</h3>
+      <h4>Posted by {{ meetup.user }} at {{ meetup.created_at }}</h4>
+      <p>Time: {{ meetup.start_time }} - {{ meetup.est_end_time }}</p>
+      <h4>Location: {{ meetup.location }}</h4>
+
+      <!-- Display Comments -->
+      <h3>Comments</h3>
       {% for comment in meetup.comment_set.all %}
       <div class="comment-container">
         <div class="comment-content">
           <h6>{{ comment.comment_content }} Posted by {{ comment.user }} at {{ comment.created_at }}</h6>
         </div>
-        <div class="is-attending-container">
-          <!-- {{ comment.is_attending  }} -->
-        </div>
-        <!-- comment input -->
-        <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          <input type="hidden" name="meetup" value="{{ meetup }}">
-          <div class="row">
-            {% include 'home/form_template.html' %}
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success">Post</button>
-              </div>
-            </div>
-          </div>
-        </form>
       </div>
       {% endfor %}
     </div>
-  {% endfor %}
-{% else %}
-  <h1>You have no meet ups</h1>
-{% endif %}
-
-<a class="btn btn-success" href="{% url 'meetups:create_meetup' %}">Create Meet Up</a>
+    <div class="panel-footer">
+      <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <input type="hidden" name="meetup" value="{{ meetup }}">
+          <input type="text" id="id_comment_content" maxlength="50" name="comment_content" required>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-success">Post</button>
+              </div>
+            </div>
+      </form>
+    </div>
+  </div>
 
 {% endblock %}

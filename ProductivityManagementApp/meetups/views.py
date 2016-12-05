@@ -14,25 +14,17 @@ def index(request):
     courses = Course.objects.filter(user=request.user)
     assignments = Assignment.objects.filter(user=request.user)
     meetups = MeetUp.objects.all()
-    form = CommentForm(request.POST, request.FILES)
-    if form.is_valid():
-        comment = form.save(commit=false)
-        comment.user = request.user
-        comment.save()
-        comments = MeetUp.comment_set.all()
-        context = {
-        'courses':courses,
-        'assignments':assignments,
-        'meetups':meetups,
-        'comments':comments
-        }
-        return redirect(request, 'meetups/index.html', context)
     context = {
     'courses':courses,
     'assignments':assignments,
     'meetups':meetups,
     }
     return render(request, 'meetups/index.html', context)
+
+def detail(request, meetup_id):
+	meetup = get_object_or_404(MeetUp, pk=meetup_id)
+	form = CommentForm(request.POST, request.FILES)
+	return render(request, 'meetups/detail.html', {'meetup':meetup, 'form':form})
 
 
 def create_meetup(request):
@@ -47,20 +39,21 @@ def create_meetup(request):
     return render(request, 'meetups/create_meetup.html', context)
 
 def create_comment(request, meetup_id):
+    meetups = MeetUp.objects.all()
     form = CommentForm(request.POST or None, request.FILES or None)
     meetup = get_object_or_404(MeetUp, pk=meetup_id)
     if form.is_valid():
         meetup_comments = meetup.comment_set.all()
-        meetup_id = meetup.id
         comment = form.save(commit=False)
+        meetup_id = meetup.id
         comment.meetup = meetup
         comment.user = request.user
         comment.save()
         meetup.save()
-        return render(request, 'meetup/index.html', {'meetup': meetup})
+        return render(request, 'meetups/detail.html', {'meetup':meetup, 'meetups':meetups})
     context = {
         'meetup': meetup,
         'form': form,
         'error_message':'There was an error'
     }
-    return render(request, 'meetup/index.html', context)
+    return render(request, 'meetups/create_comment.html', context)

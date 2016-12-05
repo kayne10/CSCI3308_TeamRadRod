@@ -100,3 +100,10 @@ nav ul li a {
 #id_comment_content {
   width: 400px;
 }
+
+.meetup-container {
+  padding: 20px 20px;
+  border: black 1px solid;
+  border-right: none;
+  border-left: none;
+}
