@@ -1,0 +1,36 @@
+Intro - everyone
+	-introduction of everyone
+	
+The problem: -Nate
+	-how we came up with our idea
+	-user stories
+	-What problem we wanted to solve
+		-needs to be easier to organize meetups
+		
+The solution: -Zach	
+	-explaining our product
+	-how our solves the problem
+		-why it's useful
+	-fun, organized
+	
+Product Demo: -Troy
+	-admin page, it's uses
+	-product demonstration
+	
+Market Analysis: -Alex
+	-comptetitors,
+		-Meetups, facebook
+	-our advantage
+	-future plans
+	-target market
+	
+Tools we used: -Alex and Troy
+	-Slack
+	-not trello
+	-django
+	-mysql and django
+	
+Ending:
+	-goodbye, use our product
+	
+	
