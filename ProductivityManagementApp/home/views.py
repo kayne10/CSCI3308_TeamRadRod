@@ -26,7 +26,7 @@ def index(request):
         'assignments':assignments,
         'meetups':meetups,
         }
-        return render(request, 'home/index.html', context)
+        return render(request, 'courses/index.html', context)
 
 def login_user(request):
     if request.method == "POST":
@@ -37,7 +37,8 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 # pass in all objects
-                return render(request, 'home/index.html')
+                courses = Course.objects.filter(user=request.user)
+                return render(request, 'courses/index.html', {'courses': courses})
             else:
                 return render(request, 'home/login.html', {'error_message': 'Your account has been disabled'})
         else:
@@ -56,8 +57,8 @@ def register(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-
-                return render(request, 'home/index.html')
+                courses = Course.objects.filter(user=request.user)
+                return render(request, 'courses/index.html', {'courses': courses})
     context = {
         "form": form,
     }
